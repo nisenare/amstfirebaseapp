@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "988160337343",
+    "project_id": "amst-lab2-firebase-nisenare",
+    "storage_bucket": "amst-lab2-firebase-nisenare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988160337343:android:cd4a531296aade4bf0ed0a",
+        "android_client_info": {
+          "package_name": "com.example.amstfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988160337343-bpssq5tn9s99d9hs0a15mckue1a0f0nb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amstfirebaseapp",
+            "certificate_hash": "e467bbf12e417b2ae42555cbe7bbeaf83fb41b51"
+          }
+        },
+        {
+          "client_id": "988160337343-5uc0jumcjgf13iqi607ji0ff05q5rhev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj87YwJ7T0LE5h8Kj12B95SzKDJUzpAlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988160337343-5uc0jumcjgf13iqi607ji0ff05q5rhev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
