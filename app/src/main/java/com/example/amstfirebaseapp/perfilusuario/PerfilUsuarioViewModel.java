@@ -28,5 +28,11 @@ public class PerfilUsuarioViewModel extends ViewModel {
         return userUiState;
     }
 
+    public void cerrarSesion() {
 
+    }
+
+    public void iniciarSesion() {
+
+    }
 }
