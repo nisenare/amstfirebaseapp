@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,7 +25,7 @@ import java.util.Map;
 
 public class PerfilUsuario extends AppCompatActivity {
 
-    TextView txt_id, txt_name, txt_email;
+    TextView txt_id, txt_name, txt_email, txt_phone;
     ImageView imv_photo;
     DatabaseReference db_reference;
 
@@ -36,15 +37,18 @@ public class PerfilUsuario extends AppCompatActivity {
         txt_id = findViewById(R.id.txt_userId);
         txt_name = findViewById(R.id.txt_nombre);
         txt_email = findViewById(R.id.txt_correo);
+        txt_phone = findViewById(R.id.txt_phone);
         imv_photo = findViewById(R.id.imv_foto);
 
         PerfilUsuarioViewModel perfilUserModel = new ViewModelProvider(this).get(PerfilUsuarioViewModel.class);
         perfilUserModel.getUiState().observe(this, userUiState -> {
             Intent intent = getIntent();
             HashMap<String, String> info_user = (HashMap<String, String>) intent.getSerializableExtra("info_user");
+            Log.d("User", info_user.toString());
             txt_id.setText(info_user.get("user_id"));
             txt_name.setText(info_user.get("user_name"));
             txt_email.setText(info_user.get("user_email"));
+            txt_phone.setText(info_user.get("user_phone"));
             String photo = info_user.get("user_photo");
             Picasso.get().load(photo).into(imv_photo);
         });

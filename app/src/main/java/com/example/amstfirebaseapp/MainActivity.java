@@ -21,6 +21,7 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.OAuthProvider;
 
 import java.util.HashMap;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
+    OAuthProvider.Builder githubProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         Intent intent = getIntent();
         String msg = intent.getStringExtra("msg");
+
+        githubProvider = OAuthProvider.newBuilder("github.com");
+
         if(msg != null){
             if(msg.equals("cerrarSesion")){
                 cerrarSesion();
@@ -98,11 +103,26 @@ public class MainActivity extends AppCompatActivity {
     );
 
     private void cerrarSesion() {
-        mGoogleSignInClient.signOut().addOnCompleteListener(this,
-            task -> updateUI(null));
+        FirebaseAuth.getInstance().signOut();
     }
 
     public void iniciarSesion(View view) {
         resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
+    }
+
+    public void iniciarSesionGithub(View view) {
+        mAuth.startActivityForSignInWithProvider(this, githubProvider.build())
+                .addOnSuccessListener(
+                        authResult -> {
+                            if (authResult != null) {
+                                updateUI(authResult.getUser());
+                            }
+                        }
+                )
+                .addOnFailureListener(
+                        e -> {
+                            Log.w("TAG", "Fallo el inicio de sesión con github.", e);
+                        }
+                );
     }
 }

@@ -54,6 +54,23 @@
             android:textSize="17.5dp" />
 
         <TextView
+            android:id="@+id/textViewPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Teléfono:" />
+
+        <TextView
+            android:id="@+id/txt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:text="Numero de Telefono"
+            android:textSize="17.5dp" />
+
+        <TextView
             android:id="@+id/textViewEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

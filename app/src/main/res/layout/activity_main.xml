@@ -32,8 +32,19 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:onClick="iniciarSesion"
-            android:text="Iniciar sesión" />
+            android:text="Iniciar sesión con Google" />
+
+        <Button
+            android:id="@+id/btn_loginGithub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:onClick="iniciarSesionGithub"
+            android:text="Iniciar sesión con GitHub" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
