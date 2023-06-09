@@ -87,6 +87,24 @@
             android:text="correo"
             android:textSize="17.5dp" />
 
+        <EditText
+            android:id="@+id/txt_tweet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Ingresa tu tweet aquí"
+            android:maxLines="3"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="end"/>
+
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
