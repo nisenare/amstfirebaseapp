@@ -75,7 +75,6 @@ public class PerfilUsuario extends AppCompatActivity {
     }
 
     public void publicarTweet(String autor) {
-        // Obtén el texto del tweet desde txt_tweet
         String tweetText = txt_tweet.getText().toString();
 
         if (!tweetText.isEmpty()) {
@@ -128,7 +127,7 @@ public class PerfilUsuario extends AppCompatActivity {
         hola_tweet.put("autor", autor);
         hola_tweet.put("fecha", fecha);
         DatabaseReference tweets = db_reference.child("Grupo6").child("Tweets");
-        DatabaseReference nuevoTweetRef = tweets.push(); // Generar una nueva clave única
+        DatabaseReference nuevoTweetRef = tweets.push();
         nuevoTweetRef.child(tweet).child("autor").setValue(autor);
         nuevoTweetRef.child(tweet).child("fecha").setValue(fecha);
     }
